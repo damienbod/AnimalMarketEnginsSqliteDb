@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdvertisingPush" xml:space="preserve">
+    <value>Successful advertising: eat pork chops</value>
+  </data>
+  <data name="AdvertisingPushLamb" xml:space="preserve">
+    <value>Successful advertising: eat organic Lamb</value>
+  </data>
+  <data name="BanksSpeculationBeef" xml:space="preserve">
+    <value>Banks are speculating in the beef market</value>
+  </data>
+  <data name="BiotinDeficiency" xml:space="preserve">
+    <value>Pig Disease Outbreak:  Pale Pig Syndrome</value>
+  </data>
+  <data name="BushFootFootRot" xml:space="preserve">
+    <value>Pig Disease Outbreak:  Porcine Reproductive &amp; Respiratory Syndrome (PRRS)</value>
+  </data>
+  <data name="CacheValleyVirus" xml:space="preserve">
+    <value>Sheep Disease Outbreak: Cache Valley Virus</value>
+  </data>
+  <data name="Calf" xml:space="preserve">
+    <value>Calf, Cows</value>
+  </data>
+  <data name="CalfScour" xml:space="preserve">
+    <value>Calf Scour</value>
+  </data>
+  <data name="FestivalSeason" xml:space="preserve">
+    <value>Festival Season people are buying more pork</value>
+  </data>
+  <data name="FestivalSeasonSheep" xml:space="preserve">
+    <value>Festival Season people are buying more sheep</value>
+  </data>
+  <data name="FootAndMouthDisease" xml:space="preserve">
+    <value>Pig Disease Outbreak: Foot-and-Mouth Disease</value>
+  </data>
+  <data name="Footrot" xml:space="preserve">
+    <value>Sheep Disease Outbreak: Footrot</value>
+  </data>
+  <data name="Hypoglycaemia" xml:space="preserve">
+    <value>Pig Disease Outbreak:  Swine Influenza Virus (SI), Flu</value>
+  </data>
+  <data name="Lamb" xml:space="preserve">
+    <value>Lamb, Sheep</value>
+  </data>
+  <data name="MadCowDisease" xml:space="preserve">
+    <value>new cases of Mad cow disease</value>
+  </data>
+  <data name="MarketCrash" xml:space="preserve">
+    <value>Beef market crash, prices are falling</value>
+  </data>
+  <data name="MulberryHeartDiseasevitaminEdeficiency" xml:space="preserve">
+    <value>Pig Disease Outbreak: Mulberry Heart Disease (vitamin E deficiency)</value>
+  </data>
+  <data name="Pig" xml:space="preserve">
+    <value>Pig</value>
+  </data>
+  <data name="PressureOnTheBeefMarket" xml:space="preserve">
+    <value>Beef market has a lot of activity</value>
+  </data>
+  <data name="PressureOnThePigMarket" xml:space="preserve">
+    <value>Pressure on the pig market</value>
+  </data>
+  <data name="PressureOnTheSheepMarket" xml:space="preserve">
+    <value>Lamb, mutton market has a lot of activity</value>
+  </data>
+  <data name="SheepFootandmouthdisease" xml:space="preserve">
+    <value>Sheep Disease Outbreak: Foot-and-mouth disease</value>
+  </data>
+  <data name="ShortageOfBeef" xml:space="preserve">
+    <value>Shortage of beef</value>
+  </data>
+  <data name="Speculation" xml:space="preserve">
+    <value>Banks are speculating with the pig stocks</value>
+  </data>
+  <data name="Sunburn" xml:space="preserve">
+    <value>Pig Disease Outbreak:  Sunburn</value>
+  </data>
+  <data name="Whitemuscledisease" xml:space="preserve">
+    <value>Sheep Disease Outbreak: White muscle disease</value>
+  </data>
+</root>

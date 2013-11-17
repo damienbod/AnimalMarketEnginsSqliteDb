@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>System.Data.SQLite.Linq</id>
+    <version>1.0.88</version>
+    <title>System.Data.SQLite.Linq</title>
+    <authors>SQLite Development Team</authors>
+    <owners>SQLite Development Team</owners>
+    <licenseUrl>http://www.sqlite.org/copyright.html</licenseUrl>
+    <projectUrl>http://system.data.sqlite.org/</projectUrl>
+    <iconUrl>http://system.data.sqlite.org/images/sqlite32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An Entity Framework 6 provider for SQLite</description>
+    <summary>An Entity Framework 6 provider for SQLite</summary>
+    <copyright>Public Domain</copyright>
+    <tags>sqlite database ado.net entity framework provider interop</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.0.1" />
+      <dependency id="System.Data.SQLite.x86" version="1.0.88.0" />
+    </dependencies>
+  </metadata>
+</package>

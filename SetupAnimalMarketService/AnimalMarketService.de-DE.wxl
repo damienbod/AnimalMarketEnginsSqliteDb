@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="de-DE" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <!-- Texte für Fehler -->
+  <String Id="ErrorNet40NotInstalled">[ProductName] benötigt Microsoft .Net 4.0 (Vollständiges Profil).</String>
+  <String Id="ErrorNewerVersionInstalled">Eine neuere Version von [ProductName] ist bereits installiert. Setupvorgang wird abgebrochen. Bitte entfernen Sie zuerst die neuere Version und starten Sie anschliessend die Installation neu.</String>
+  <String Id="ErrorAdministrativePriviledgesRequired">Sie müssen als Administrator angemeldet sein um dieses Produkt zu installieren.</String>
+  <String Id="ErrorWindowsServer2008OrHigherRequired">[ProductName] benötigt mindestens Microsoft Windows Server 2008.</String>
+</WixLocalization>

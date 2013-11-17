@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix  xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Product Id="*" Name="Animal Market Service" Language="1033" Version="1.0.0.0" Manufacturer="damienbod" UpgradeCode="5c11fb35-5450-47a2-b44c-30128f8e7b02">
+		<Package Id="*" InstallerVersion="305" Compressed="yes" InstallScope="perMachine" />
+
+		<MediaTemplate />
+
+    <Property Id="INSTALLPATH">C:\damienbod</Property>
+    
+    <!-- Installationsbeschränkungen prüfen. -->
+    <PropertyRef Id="NETFRAMEWORK40FULL" />
+
+    <Condition Message="!(loc.ErrorNet40NotInstalled)">
+      <![CDATA[Installed OR NETFRAMEWORK40FULL]]>
+    </Condition>
+
+    <Condition Message="!(loc.ErrorAdministrativePriviledgesRequired)">
+      <![CDATA[Privileged]]>
+    </Condition>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+        <Directory Id='damienbod' Name='damienbod'>
+          <Directory Id='INSTALLPATH' Name='AnimalMarketService' >
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id='INSTALLPATH'>
+      <Directory Id='INSTALLDIR_AnimalMarketService' Name='AnimalMarketService' />
+    </DirectoryRef>
+
+    <Feature Id="ProductFeature" Title="WiXServiceSilentInstaller" Level="1">
+      <ComponentGroupRef Id="AnimalMarketServiceGroup" />
+      <ComponentRef Id="AnimalMarketServiceRegisterComponent" />
+    </Feature>
+
+    <Component Id='AnimalMarketServiceRegisterComponent' Guid='ABB394C2-21A1-4132-AB7D-95CBBABE5B00' Directory='INSTALLDIR_AnimalMarketService' Feature='ProductFeature' DiskId='1'>
+      <File Id="AnimalMarketServiceExe" Name="AnimalMarketService.exe" Source="..\AnimalMarketService\bin\Release\AnimalMarketService.exe" KeyPath="yes" DiskId="1"/>
+      
+      <ServiceInstall Id='AnimalMarketServiceInstall' Name='AnimalMarketWindowsService' Description='Animal Market service damienbod' ErrorControl='normal' Start='auto' Type='ownProcess' Vital='yes' />
+      <ServiceControl Id='AnimalMarketServiceInstall' Name='AnimalMarketWindowsService' Start='install'  Remove='uninstall' Wait='yes' />
+
+      <CreateFolder />
+    </Component>
+
+    <!-- Sicherstellen das Upgrades erlaubt sind. -->
+    <MajorUpgrade Schedule="afterInstallInitialize" AllowDowngrades="no" DowngradeErrorMessage="!(loc.ErrorNewerVersionInstalled)" AllowSameVersionUpgrades="yes" />
+
+  </Product>
+
+
+</Wix>
