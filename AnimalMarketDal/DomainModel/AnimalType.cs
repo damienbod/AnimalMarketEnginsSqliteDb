@@ -11,7 +11,8 @@ namespace AnimalMarketDal.DomainModel
  
         public long Id { get; set; }
         public string Name { get; set; }
-
+        public double MeanCost { get; set; }
+        
         public virtual ICollection<EventData> EventDataValues { get; set; }
     }
 }

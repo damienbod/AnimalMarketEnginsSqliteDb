@@ -150,7 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="DataAccess\EventData.cs" />
     <Compile Include="DataAccess\EventListData.cs" />
     <Compile Include="DataAccess\IEventListData.cs" />
     <Compile Include="Engine\IValueGenerator.cs" />
@@ -158,11 +157,8 @@
     <Compile Include="Engine\ValueGenerator.cs" />
     <Compile Include="Managers\GameManager.cs" />
     <Compile Include="Managers\IGameManager.cs" />
-    <Compile Include="Model\Calf.cs" />
     <Compile Include="Model\Iteration.cs" />
     <Compile Include="Model\IterationEventItemData.cs" />
-    <Compile Include="Model\Lamb.cs" />
-    <Compile Include="Model\Pig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\TextsResource.Designer.cs">
       <AutoGen>True</AutoGen>

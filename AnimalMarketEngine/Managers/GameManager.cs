@@ -1,5 +1,5 @@
 ﻿using AnimalMarketCommon.Attributes;
-using AnimalMarketDal.Repo;
+using AnimalMarketDal.DomainModel;
 using AnimalMarketEngine.DataAccess;
 using AnimalMarketEngine.Engine;
 using AnimalMarketEngine.Model;
@@ -11,27 +11,23 @@ namespace AnimalMarketEngine.Managers
     {
         private readonly IEventListData _eventListData;
         private readonly IValueGenerator _valueGenerator;
-        private readonly IEventDataRepository _eventDataRepository;
 
         private Iteration _iterationLastValue;
 
-        public GameManager(IEventListData eventListData, IValueGenerator valueGenerator, IEventDataRepository eventDataRepository)
+        public GameManager(IEventListData eventListData, IValueGenerator valueGenerator)
         {
             _eventListData = eventListData;
             _valueGenerator = valueGenerator;
-            _eventDataRepository = eventDataRepository;
             InitGame();
-
-            _eventDataRepository.GetAnimalTypes();
         }
 
         private void InitGame()
         {
             _iterationLastValue = new Iteration
             {
-                Calf = new IterationEventItemData {Cost = Calf.MeanCost, Name = Calf.Name},
-                Pig = new IterationEventItemData {Cost = Pig.MeanCost, Name = Pig.Name},
-                Lamb = new IterationEventItemData {Cost = Lamb.MeanCost, Name = Lamb.Name}
+                Calf = new IterationEventItemData { Cost = _eventListData.GetCowType().MeanCost, Name = _eventListData.GetCowType().Name },
+                Pig = new IterationEventItemData { Cost = _eventListData.GetPigType().MeanCost, Name = _eventListData.GetPigType().Name },
+                Lamb = new IterationEventItemData { Cost = _eventListData.GetLambType().MeanCost, Name = _eventListData.GetLambType().Name }
             };
         }
 
@@ -39,9 +35,9 @@ namespace AnimalMarketEngine.Managers
         {
             var iteration = new Iteration
             {
-                Calf = SetNextIterationForType(_iterationLastValue.Calf, _eventListData.GetCalfEvent(), Calf.MeanCost),
-                Pig = SetNextIterationForType(_iterationLastValue.Pig, _eventListData.GetPigEvent(), Pig.MeanCost),
-                Lamb = SetNextIterationForType(_iterationLastValue.Lamb, _eventListData.GetLambEvent(), Lamb.MeanCost)
+                Calf = SetNextIterationForType(_iterationLastValue.Calf, _eventListData.GetCalfEvent(), _eventListData.GetCowType().MeanCost),
+                Pig = SetNextIterationForType(_iterationLastValue.Pig, _eventListData.GetPigEvent(), _eventListData.GetPigType().MeanCost),
+                Lamb = SetNextIterationForType(_iterationLastValue.Lamb, _eventListData.GetLambEvent(), _eventListData.GetLambType().MeanCost)
             };
             _iterationLastValue = iteration;
             return iteration;
@@ -59,7 +55,7 @@ namespace AnimalMarketEngine.Managers
 
         public void Dispose()
         {
-            _eventDataRepository.Dispose();
+            _eventListData.Dispose();
         }
     }
 }

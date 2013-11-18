@@ -1,14 +1,19 @@
 ﻿using System;
-using System.Data.Entity.Core.Objects;
+using System.Collections.Generic;
 using System.Linq;
 using AnimalMarketCommon.Attributes;
 using AnimalMarketDal.Dal;
+using AnimalMarketDal.DomainModel;
 
 namespace AnimalMarketDal.Repo
 {
     [LifecycleTransient]
     public class EventDataRepository : IEventDataRepository
     {
+        private const int PigId = 1;
+        private const int CalfId = 2;
+        private const int LambId = 0;
+
         private readonly AnimalContext _context;
 
         public EventDataRepository(AnimalContext context)
@@ -16,17 +21,48 @@ namespace AnimalMarketDal.Repo
             _context = context;
         }
 
-        public void GetAnimalTypes()
+        private IEnumerable<AnimalType> GetAnimalTypes()
         {
-            var animals = from a in _context.AnimalTypes
-                          //where a.StringTestId.StartsWith("P")
-                          //orderby a.StringTestId
-                          select a;
+            return from a in _context.AnimalTypes select a;
+        }
 
-            foreach (var animal in animals)
-            {
-                Console.WriteLine(animal.Name);
-            }
+        public AnimalType GetCowType()
+        {
+            return GetAnimalTypes().FirstOrDefault(a => a.Id.Equals(CalfId));
+        }
+
+        public AnimalType GetPigType()
+        {
+            return GetAnimalTypes().FirstOrDefault(a => a.Id.Equals(PigId));
+        }
+
+        public AnimalType GetLambType()
+        {
+            return GetAnimalTypes().FirstOrDefault(a => a.Id.Equals(LambId));
+        }
+
+        public IEnumerable<EventData> GetPigData()
+        {
+            return from a in _context.EventDataValues
+                   where a.AnimalTypeId.Equals(PigId)
+                          orderby a.StringTestId
+                          select a;
+        }
+
+        public IEnumerable<EventData> GetLambData()
+        {
+            return from a in _context.EventDataValues
+                   where a.AnimalTypeId.Equals(LambId)
+                   orderby a.StringTestId
+                   select a;
+        }
+
+        public IEnumerable<EventData> GetCalfData()
+        {
+            return from a in _context.EventDataValues
+                   where a.AnimalTypeId.Equals(CalfId)
+                   orderby a.StringTestId
+                   select a;
         }
 
         public void SaveChanges()
