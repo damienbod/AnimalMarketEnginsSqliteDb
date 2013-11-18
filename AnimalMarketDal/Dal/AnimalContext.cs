@@ -1,7 +1,5 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
 using AnimalMarketDal.DomainModel;
 
 namespace AnimalMarketDal.Dal
@@ -23,7 +21,5 @@ namespace AnimalMarketDal.Dal
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     
-    }
-
-    
+    } 
 }

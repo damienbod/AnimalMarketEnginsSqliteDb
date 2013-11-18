@@ -23,7 +23,12 @@ namespace AnimalMarketEngine.Resources {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class TextsResource {
-        
+
+        internal static string GetResourceFromKey(string key)
+        {
+            return ResourceManager.GetString(key, resourceCulture);
+        }
+
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;

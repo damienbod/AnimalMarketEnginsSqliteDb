@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AnimalMarketCommon.Attributes;
 using AnimalMarketDal.DomainModel;
@@ -56,9 +57,25 @@ namespace AnimalMarketEngine.DataAccess
             return _eventDataRepository.GetLambType();
         }
 
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _eventDataRepository.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
         public void Dispose()
         {
-            _eventDataRepository.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
+
     }
 }

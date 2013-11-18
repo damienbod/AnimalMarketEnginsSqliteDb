@@ -1,8 +1,10 @@
-﻿using AnimalMarketCommon.Attributes;
+﻿using System;
+using AnimalMarketCommon.Attributes;
 using AnimalMarketDal.DomainModel;
 using AnimalMarketEngine.DataAccess;
 using AnimalMarketEngine.Engine;
 using AnimalMarketEngine.Model;
+using AnimalMarketEngine.Resources;
 
 namespace AnimalMarketEngine.Managers
 {
@@ -25,9 +27,9 @@ namespace AnimalMarketEngine.Managers
         {
             _iterationLastValue = new Iteration
             {
-                Calf = new IterationEventItemData { Cost = _eventListData.GetCowType().MeanCost, Name = _eventListData.GetCowType().Name },
-                Pig = new IterationEventItemData { Cost = _eventListData.GetPigType().MeanCost, Name = _eventListData.GetPigType().Name },
-                Lamb = new IterationEventItemData { Cost = _eventListData.GetLambType().MeanCost, Name = _eventListData.GetLambType().Name }
+                Calf = new IterationEventItemData { Cost = _eventListData.GetCowType().MeanCost, Name = TextsResource.GetResourceFromKey(_eventListData.GetCowType().Name) },
+                Pig = new IterationEventItemData { Cost = _eventListData.GetPigType().MeanCost, Name = TextsResource.GetResourceFromKey(_eventListData.GetPigType().Name) },
+                Lamb = new IterationEventItemData { Cost = _eventListData.GetLambType().MeanCost, Name = TextsResource.GetResourceFromKey(_eventListData.GetLambType().Name) }
             };
         }
 
@@ -48,14 +50,30 @@ namespace AnimalMarketEngine.Managers
             return new IterationEventItemData
             {
                 Cost = _valueGenerator.GetNextValue(animal.Cost, data.Factor, data.FixChange, meanValueTarget),
-                MessageText = data.StringTestId,
+                MessageText = TextsResource.GetResourceFromKey(data.StringTestId),
                 Name = animal.Name
             };
         }
 
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _eventListData.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
         public void Dispose()
         {
-            _eventListData.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
+
     }
 }
