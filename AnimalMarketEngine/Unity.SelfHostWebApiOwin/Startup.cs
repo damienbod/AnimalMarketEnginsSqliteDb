@@ -18,9 +18,7 @@ namespace Unity.SelfHostWebApiOwin
         {
             string baseAddress = "http://localhost:8086/";
             var startup = _container.Resolve<Startup>();
-            webApplication = WebApp.Start(baseAddress, startup.Configuration);
-
-            
+            webApplication = WebApp.Start(baseAddress, startup.Configuration);           
         }
 
         public static void StopServer()
