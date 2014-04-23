@@ -70,7 +70,7 @@
         <member name="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.DeserializableConfigurationElementCollection`1">
             <summary>
             Specialization of <see cref="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.DeserializableConfigurationElementCollectionBase`1"/>
-            that provides a canned implmentation of <see cref="M:System.Configuration.ConfigurationElementCollection.CreateNewElement"/>.
+            that provides a canned implementation of <see cref="M:System.Configuration.ConfigurationElementCollection.CreateNewElement"/>.
             </summary>
             <typeparam name="TElement">Type of configuration element in the collection.</typeparam>
         </member>
@@ -160,11 +160,10 @@
             <returns>
             true if the unrecognized element was deserialized successfully; otherwise, false. The default is false.
             </returns>
-            <param name="elementName">The name of the unrecognized element. 
-                            </param><param name="reader">An input stream that reads XML from the configuration file. 
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.
-                            </exception><exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".
-                            </exception>
+            <param name="elementName">The name of the unrecognized element.</param>
+            <param name="reader">An input stream that reads XML from the configuration file.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.AliasElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
             <summary>
@@ -173,8 +172,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="P:Microsoft.Practices.Unity.Configuration.AliasElementCollection.Item(System.String)">
             <summary>
@@ -295,8 +293,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.ConfigurationElementExtensions">
             <summary>
@@ -478,16 +475,14 @@
             <summary>
             Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
             </summary>
-            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-                            </param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
-                            </exception>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.Clear">
             <summary>
             Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
             </summary>
-            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. 
-                            </exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.Contains(Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.ParseResult)">
             <summary>
@@ -496,23 +491,22 @@
             <returns>
             true if <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
             </returns>
-            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-                            </param>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.CopyTo(Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.ParseResult[],System.Int32)">
             <summary>
             Copies the elements of the sequence to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
             </summary>
-            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from this sequence. The <see cref="T:System.Array"/> must have zero-based indexing.
-                            </param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.
-                            </param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.
-                            </exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.
-                            </exception><exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional.
-                                -or-
-                            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
-                                -or-
-                                The number of elements in the source is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.
-                            </exception>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from this sequence. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional.
+            -or-
+            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
+            -or-
+            The number of elements in the source is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.Remove(Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.ParseResult)">
             <summary>
@@ -521,9 +515,8 @@
             <returns>
             true if <paramref name="item"/> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
             </returns>
-            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-                            </param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
-                            </exception>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.IndexOf(Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.ParseResult)">
             <summary>
@@ -532,27 +525,24 @@
             <returns>
             The index of <paramref name="item"/> if found in the list; otherwise, -1.
             </returns>
-            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.
-                            </param>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.Insert(System.Int32,Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.ParseResult)">
             <summary>
             Inserts an item to the <see cref="T:System.Collections.Generic.IList`1"/> at the specified index.
             </summary>
-            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.
-                            </param><param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.
-                            </param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.
-                            </exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.
-                            </exception>
+            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.</param>
+            <param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.RemoveAt(System.Int32)">
             <summary>
             Removes the <see cref="T:System.Collections.Generic.IList`1"/> item at the specified index.
             </summary>
-            <param name="index">The zero-based index of the item to remove.
-                            </param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.
-                            </exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.
-                            </exception>
+            <param name="index">The zero-based index of the item to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
         </member>
         <member name="P:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.SequenceResult.Count">
             <summary>
@@ -577,10 +567,9 @@
             <returns>
             The element at the specified index.
             </returns>
-            <param name="index">The zero-based index of the element to get or set.
-                            </param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.
-                            </exception><exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.Generic.IList`1"/> is read-only.
-                            </exception>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception>
+            <exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeNameInfo">
             <summary>
@@ -610,7 +599,7 @@
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.XmlWriterExtensions.WriteElement(System.Xml.XmlWriter,System.String,System.Action{System.Xml.XmlWriter})">
             <summary>
             A helper method to make it more foolproof to write elements. This takes care of writing the
-            start and end elment tags, and takes a nested closure with the code to write the content of
+            start and end element tags, and takes a nested closure with the code to write the content of
             the tag. That way the caller doesn't need to worry about the details of getting the start
             and end tags correct.
             </summary>
@@ -895,8 +884,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ContainerElement">
             <summary>
@@ -924,22 +912,22 @@
             <returns>
             true when an unknown element is encountered while deserializing; otherwise, false.
             </returns>
-            <param name="elementName">The name of the unknown subelement.
-                            </param><param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
-                                - or -
-                                One or more of the element's attributes is locked.
-                                - or -
-                            <paramref name="elementName"/> is unrecognized, or the element has an unrecognized attribute.
-                                - or -
-                                The element has a Boolean attribute with an invalid value.
-                                - or -
-                                An attempt was made to deserialize a property more than once.
-                                - or -
-                                An attempt was made to deserialize a property that is not a valid member of the element.
-                                - or -
-                                The element cannot contain a CDATA or text element.
-                            </exception>
+            <param name="elementName">The name of the unknown subelement.</param>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
+            - or -
+            One or more of the element's attributes is locked.
+            - or -
+            <paramref name="elementName"/> is unrecognized, or the element has an unrecognized attribute.
+            - or -
+            The element has a Boolean attribute with an invalid value.
+            - or -
+            An attempt was made to deserialize a property more than once.
+            - or -
+            An attempt was made to deserialize a property that is not a valid member of the element.
+            - or -
+            The element cannot contain a CDATA or text element.
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ContainerElement.SerializeContent(System.Xml.XmlWriter)">
             <summary>
@@ -1016,8 +1004,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.DependencyElement">
             <summary>
@@ -1050,9 +1037,9 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.DependencyElement.SerializeContent(System.Xml.XmlWriter)">
             <summary>
-             Write the contents of this element to the given <see cref="T:System.Xml.XmlWriter"/>. This
-             method always outputs an explicit &lt;dependency&gt; tag, instead of providing
-             attributes to the parent method.
+            Write the contents of this element to the given <see cref="T:System.Xml.XmlWriter"/>. This
+            method always outputs an explicit &lt;dependency&gt; tag, instead of providing
+            attributes to the parent method.
             </summary>
             <param name="writer">Writer to send XML content to.</param>
         </member>
@@ -1122,8 +1109,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ExtensionElementMap">
             <summary>
@@ -1209,11 +1195,11 @@
             <returns>
             true if the unrecognized element was deserialized successfully; otherwise, false. The default is false.
             </returns>
-            <param name="elementName">The name of the unrecognized element. 
-                            </param><param name="reader">An input stream that reads XML from the configuration file. 
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.
-                            </exception><exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".
-                            </exception>
+            <param name="elementName">The name of the unrecognized element.</param>
+            <param name="reader">An input stream that reads XML from the configuration file. </param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.
+            </exception><exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.InjectionMemberElementCollection.CreateNewElement">
             <summary>
@@ -1230,8 +1216,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="P:Microsoft.Practices.Unity.Configuration.InjectionMemberElementCollection.Item(System.String)">
             <summary>
@@ -1298,8 +1283,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.IValueProvidingElement">
             <summary>
@@ -1424,8 +1408,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for</param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.OptionalElement">
             <summary>
@@ -1496,14 +1479,14 @@
             <summary>
             Reads XML from the configuration file.
             </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file.
-                            </param><param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element to read is locked.
-                                - or -
-                                An attribute of the current node is not recognized.
-                                - or -
-                                The lock status of the current node cannot be determined.  
-                            </exception>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file.</param>
+            <param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element to read is locked.
+            - or -
+            An attribute of the current node is not recognized.
+            - or -
+            The lock status of the current node cannot be determined.  
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ParameterElement.OnDeserializeUnrecognizedAttribute(System.String,System.String)">
             <summary>
@@ -1512,9 +1495,8 @@
             <returns>
             true when an unknown attribute is encountered while deserializing; otherwise, false.
             </returns>
-            <param name="name">The name of the unrecognized attribute.
-                            </param><param name="value">The value of the unrecognized attribute.
-                            </param>
+            <param name="name">The name of the unrecognized attribute.</param>
+            <param name="value">The value of the unrecognized attribute.</param>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ParameterElement.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)">
             <summary>
@@ -1523,22 +1505,22 @@
             <returns>
             true when an unknown element is encountered while deserializing; otherwise, false.
             </returns>
-            <param name="elementName">The name of the unknown subelement.
-                            </param><param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
-                                - or -
-                                One or more of the element's attributes is locked.
-                                - or -
-                            <paramref name="elementName"/> is unrecognized, or the element has an unrecognized attribute.
-                                - or -
-                                The element has a Boolean attribute with an invalid value.
-                                - or -
-                                An attempt was made to deserialize a property more than once.
-                                - or -
-                                An attempt was made to deserialize a property that is not a valid member of the element.
-                                - or -
-                                The element cannot contain a CDATA or text element.
-                            </exception>
+            <param name="elementName">The name of the unknown subelement.</param>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
+            - or -
+            One or more of the element's attributes is locked.
+            - or -
+            <paramref name="elementName"/> is unrecognized, or the element has an unrecognized attribute.
+            - or -
+            The element has a Boolean attribute with an invalid value.
+            - or -
+            An attempt was made to deserialize a property more than once.
+            - or -
+            An attempt was made to deserialize a property that is not a valid member of the element.
+            - or -
+            The element cannot contain a CDATA or text element.
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ParameterElement.SerializeContent(System.Xml.XmlWriter)">
             <summary>
@@ -1592,8 +1574,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ParameterValueElementCollection">
             <summary>
@@ -1607,11 +1588,10 @@
             <returns>
             true if the unrecognized element was deserialized successfully; otherwise, false. The default is false.
             </returns>
-            <param name="elementName">The name of the unrecognized element. 
-                            </param><param name="reader">An input stream that reads XML from the configuration file. 
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.
-                            </exception><exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".
-                            </exception>
+            <param name="elementName">The name of the unrecognized element. </param>
+            <param name="reader">An input stream that reads XML from the configuration file. </param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ParameterValueElementCollection.CreateNewElement">
             <summary>
@@ -1628,8 +1608,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="P:Microsoft.Practices.Unity.Configuration.ParameterValueElementCollection.DeserializedElementHolder.Value">
             <summary>
@@ -1803,14 +1782,14 @@
             <summary>
             Reads XML from the configuration file.
             </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file.
-                            </param><param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element to read is locked.
-                                - or -
-                                An attribute of the current node is not recognized.
-                                - or -
-                                The lock status of the current node cannot be determined.  
-                            </exception>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file.</param>
+            <param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element to read is locked.
+            - or -
+            An attribute of the current node is not recognized.
+            - or -
+            The lock status of the current node cannot be determined.  
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.PropertyElement.OnDeserializeUnrecognizedAttribute(System.String,System.String)">
             <summary>
@@ -1819,9 +1798,8 @@
             <returns>
             true when an unknown attribute is encountered while deserializing; otherwise, false.
             </returns>
-            <param name="name">The name of the unrecognized attribute.
-                            </param><param name="value">The value of the unrecognized attribute.
-                            </param>
+            <param name="name">The name of the unrecognized attribute.</param>
+            <param name="value">The value of the unrecognized attribute.</param>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.PropertyElement.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)">
             <summary>
@@ -1830,22 +1808,22 @@
             <returns>
             true when an unknown element is encountered while deserializing; otherwise, false.
             </returns>
-            <param name="elementName">The name of the unknown subelement.
-                            </param><param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
-                                - or -
-                                One or more of the element's attributes is locked.
-                                - or -
-                            <paramref name="elementName"/> is unrecognized, or the element has an unrecognized attribute.
-                                - or -
-                                The element has a Boolean attribute with an invalid value.
-                                - or -
-                                An attempt was made to deserialize a property more than once.
-                                - or -
-                                An attempt was made to deserialize a property that is not a valid member of the element.
-                                - or -
-                                The element cannot contain a CDATA or text element.
-                            </exception>
+            <param name="elementName">The name of the unknown subelement.</param>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
+            - or -
+            One or more of the element's attributes is locked.
+            - or -
+            <paramref name="elementName"/> is unrecognized, or the element has an unrecognized attribute.
+            - or -
+            The element has a Boolean attribute with an invalid value.
+            - or -
+            An attempt was made to deserialize a property more than once.
+            - or -
+            An attempt was made to deserialize a property that is not a valid member of the element.
+            - or -
+            The element cannot contain a CDATA or text element.
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.PropertyElement.SerializeContent(System.Xml.XmlWriter)">
             <summary>
@@ -1953,11 +1931,10 @@
             <returns>
             true if the unrecognized element was deserialized successfully; otherwise, false. The default is false.
             </returns>
-            <param name="elementName">The name of the unrecognized element. 
-                            </param><param name="reader">An input stream that reads XML from the configuration file. 
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.
-                            </exception><exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".
-                            </exception>
+            <param name="elementName">The name of the unrecognized element. </param>
+            <param name="reader">An input stream that reads XML from the configuration file. </param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element specified in <paramref name="elementName"/> is the &lt;clear&gt; element.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="elementName"/> starts with the reserved prefix "config" or "lock".</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.RegisterElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
             <summary>
@@ -1966,13 +1943,12 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.SectionExtension">
             <summary>
             Base class for Unity configuration section extensions.
-            Derived classes are used to add custom elments and aliases
+            Derived classes are used to add custom elements and aliases
             into the configuration section being loaded.
             </summary>
         </member>
@@ -2030,14 +2006,14 @@
             <summary>
             Reads XML from the configuration file.
             </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file.
-                            </param><param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element to read is locked.
-                                - or -
-                                An attribute of the current node is not recognized.
-                                - or -
-                                The lock status of the current node cannot be determined.  
-                            </exception>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file.</param>
+            <param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">The element to read is locked.
+            - or -
+            An attribute of the current node is not recognized.
+            - or -
+            The lock status of the current node cannot be determined.  
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.SectionExtensionElement.SerializeContent(System.Xml.XmlWriter)">
             <summary>
@@ -2076,8 +2052,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeResolver">
             <summary>
@@ -2094,15 +2069,15 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeResolver.ResolveType(System.String)">
             <summary>
-            Resolves a type alias or type fullname to a concrete type.
+            Resolves a type alias or type FullName to a concrete type.
             </summary>
-            <param name="typeNameOrAlias">Type alias or type fullname</param>
+            <param name="typeNameOrAlias">Type alias or type FullName</param>
             <returns>Type object or null if resolve fails.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if alias lookup fails.</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeResolver.ResolveType(System.String,System.Boolean)">
             <summary>
-            Resolves a type alias or type fullname to a concrete type.
+            Resolves a type alias or type FullName to a concrete type.
             </summary>
             <param name="typeNameOrAlias">Alias or name to resolve.</param>
             <param name="throwIfResolveFails">if true and the alias does not
@@ -2146,7 +2121,7 @@
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeResolverImpl.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Construct a new <see cref="T:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeResolverImpl"/> that uses the given
-            sequence of alias, typename pairs to resolve types.
+            sequence of alias, type name pairs to resolve types.
             </summary>
             <param name="aliasesSequence">Type aliases from the configuration file.</param>
             <param name="assemblies">Assembly names to search.</param>
@@ -2154,7 +2129,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ConfigurationHelpers.TypeResolverImpl.ResolveType(System.String,System.Boolean)">
             <summary>
-            Resolves a type alias or type fullname to a concrete type.
+            Resolves a type alias or type FullName to a concrete type.
             </summary>
             <param name="typeNameOrAlias">Alias or name to resolve.</param>
             <param name="throwIfResolveFails">if true and the alias does not
@@ -2215,9 +2190,8 @@
             <summary>
             Reads XML from the configuration file.
             </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> object, which reads from the configuration file. 
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="reader"/> found no elements in the configuration file.
-                            </exception>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> object, which reads from the configuration file. </param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="reader"/> found no elements in the configuration file.</exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.UnityConfigurationSection.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)">
             <summary>
@@ -2226,9 +2200,10 @@
             <returns>
             true when an unknown element is encountered while deserializing; otherwise, false.
             </returns>
-            <param name="elementName">The name of the unknown subelement.
-                            </param><param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.
-                            </param><exception cref="T:System.Configuration.ConfigurationErrorsException">The element identified by <paramref name="elementName"/> is locked.
+            <param name="elementName">The name of the unknown subelement.</param>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> being used for deserialization.</param>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">
+                                The element identified by <paramref name="elementName"/> is locked.
                                 - or -
                                 One or more of the element's attributes is locked.
                                 - or -
@@ -2241,7 +2216,7 @@
                                 An attempt was made to deserialize a property that is not a valid member of the element.
                                 - or -
                                 The element cannot contain a CDATA or text element.
-                            </exception>
+            </exception>
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.UnityConfigurationSection.SerializeSection(System.Configuration.ConfigurationElement,System.String,System.Configuration.ConfigurationSaveMode)">
             <summary>
@@ -2250,10 +2225,9 @@
             <returns>
             An XML string containing an unmerged view of the <see cref="T:System.Configuration.ConfigurationSection"/> object.
             </returns>
-            <param name="parentElement">The <see cref="T:System.Configuration.ConfigurationElement"/> instance to use as the parent when performing the un-merge.
-                            </param><param name="name">The name of the section to create.
-                            </param><param name="saveMode">The <see cref="T:System.Configuration.ConfigurationSaveMode"/> instance to use when writing to a string.
-                            </param>
+            <param name="parentElement">The <see cref="T:System.Configuration.ConfigurationElement"/> instance to use as the parent when performing the un-merge.</param>
+            <param name="name">The name of the section to create.</param>
+            <param name="saveMode">The <see cref="T:System.Configuration.ConfigurationSaveMode"/> instance to use when writing to a string.</param>
         </member>
         <member name="P:Microsoft.Practices.Unity.Configuration.UnityConfigurationSection.CurrentSection">
             <summary>
@@ -2334,8 +2308,7 @@
             <returns>
             An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
             </returns>
-            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. 
-                            </param>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for. </param>
         </member>
         <member name="P:Microsoft.Practices.Unity.Configuration.ContainerElementCollection.Item(System.String)">
             <summary>
@@ -2420,9 +2393,9 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.Configuration.ValueElement.SerializeContent(System.Xml.XmlWriter)">
             <summary>
-             Write the contents of this element to the given <see cref="T:System.Xml.XmlWriter"/>. This
-             method always outputs an explicit &lt;dependency&gt; tag, instead of providing
-             attributes to the parent method.
+            Write the contents of this element to the given <see cref="T:System.Xml.XmlWriter"/>. This
+            method always outputs an explicit &lt;dependency&gt; tag, instead of providing
+            attributes to the parent method.
             </summary>
             <param name="writer">Writer to send XML content to.</param>
         </member>

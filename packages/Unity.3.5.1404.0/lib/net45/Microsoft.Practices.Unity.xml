@@ -4,299 +4,24 @@
         <name>Microsoft.Practices.Unity</name>
     </assembly>
     <members>
-        <member name="T:Microsoft.Practices.Unity.DuplicateTypeMappingException">
+        <member name="T:Microsoft.Practices.Unity.IRegisteredNamesPolicy">
             <summary>
-            The exception that is thrown when registering multiple types would result in an type mapping being overwritten.
+            Provides access to the names registered for a container.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.DuplicateTypeMappingException.#ctor(System.String,System.Type,System.Type,System.Type)">
+        <member name="T:Microsoft.Practices.ObjectBuilder2.IBuilderPolicy">
             <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Practices.Unity.DuplicateTypeMappingException"/> class.
-            </summary>
-            <param name="name">The name for the mapping.</param>
-            <param name="mappedFromType">The source type for the mapping.</param>
-            <param name="currentMappedToType">The type currently mapped.</param>
-            <param name="newMappedToType">The new type to map.</param>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.DuplicateTypeMappingException.Name">
-            <summary>
-            Gets the name for the mapping.
+            Represents a builder policy interface. Since there are no fixed requirements
+            for policies, it acts as a marker interface from which to derive all other
+            policy interfaces.
             </summary>
         </member>
-        <member name="P:Microsoft.Practices.Unity.DuplicateTypeMappingException.MappedFromType">
+        <member name="M:Microsoft.Practices.Unity.IRegisteredNamesPolicy.GetRegisteredNames(System.Type)">
             <summary>
-            Gets the source type for the mapping.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.DuplicateTypeMappingException.CurrentMappedToType">
-            <summary>
-            Gets the type currently mapped.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.DuplicateTypeMappingException.NewMappedToType">
-            <summary>
-            Gets the new type to map.
-            </summary>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.WithLifetime">
-            <summary>
-            Provides helper methods to specify the lifetime for a type with registration by convention.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.None(System.Type)">
-            <summary>
-            Returns a <see langword="null"/> <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
+            Gets the names registered for a type.
             </summary>
             <param name="type">The type.</param>
-            <returns>A lifetime manager</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.ContainerControlled(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.ContainerControlledLifetimeManager"/>.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>A container controlled lifetime manager.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.ExternallyControlled(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.ExternallyControlledLifetimeManager"/>.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>An externally controlled lifetime manager.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.Hierarchical(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.HierarchicalLifetimeManager"/>.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>A hierarchical lifetime manager.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.PerResolve(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.PerResolveLifetimeManager"/>.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>A per resolve lifetime manager.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.Transient(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.TransientLifetimeManager"/>.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>A transient lifetime manager.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.Custom``1(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
-            </summary>
-            <typeparam name="T">The custom <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> type.</typeparam>
-            <param name="type">The type.</param>
-            <returns>
-            A lifetime manager.
-            </returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithLifetime.PerThread(System.Type)">
-            <summary>
-            Returns a <see cref="T:Microsoft.Practices.Unity.PerThreadLifetimeManager"/>.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>A per thread lifetime manager.</returns>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.AllClasses">
-            <summary>
-            Provides helper methods to retrieve classes from assemblies.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.AllClasses.FromAssemblies(System.Reflection.Assembly[])">
-            <summary>
-            Returns all visible, non-abstract classes from <paramref name="assemblies"/>.
-            </summary>
-            <param name="assemblies">The assemblies.</param>
-            <returns>All visible, non-abstract classes found in the assemblies.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="assemblies"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException"><paramref name="assemblies"/> contains <see langword="null"/> elements.</exception>
-            <remarks>All exceptions thrown while getting types from the assemblies are ignored, and the types that can be retrieved are returned.</remarks>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.AllClasses.FromAssemblies(System.Boolean,System.Reflection.Assembly[])">
-            <summary>
-            Returns all visible, non-abstract classes from <paramref name="assemblies"/>, and optionally skips errors.
-            </summary>
-            <param name="skipOnError"><see langword="true"/> to skip errors; otherwise, <see langword="true"/>.</param>
-            <param name="assemblies">The assemblies.</param>
-            <returns>
-            All visible, non-abstract classes.
-            </returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="assemblies"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException"><paramref name="assemblies"/> contains <see langword="null"/> elements.</exception>
-            <remarks>
-            If <paramref name="skipOnError"/> is <see langword="true"/>, all exceptions thrown while getting types from the assemblies are ignored, and the types 
-            that can be retrieved are returned; otherwise, the original exception is thrown.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.AllClasses.FromAssemblies(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Boolean)">
-            <summary>
-            Returns all visible, non-abstract classes from <paramref name="assemblies"/>.
-            </summary>
-            <param name="skipOnError"><see langword="true"/> to skip errors; otherwise, <see langword="true"/>.</param>
-            <param name="assemblies">The assemblies.</param>
-            <returns>
-            All visible, non-abstract classes.
-            </returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="assemblies"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException"><paramref name="assemblies"/> contains <see langword="null"/> elements.</exception>
-            <remarks>
-            If <paramref name="skipOnError"/> is <see langword="true"/>, all exceptions thrown while getting types from the assemblies are ignored, and the types 
-            that can be retrieved are returned; otherwise, the original exception is thrown.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.AllClasses.FromLoadedAssemblies(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
-            <summary>
-            Returns all visible, non-abstract classes from all assemblies that are loaded in the current application domain.
-            </summary>
-            <param name="includeSystemAssemblies"><see langword="false" /> to include system assemblies; otherwise, <see langword="false" />. Defaults to <see langword="false" />.</param>
-            <param name="includeUnityAssemblies"><see langword="false" /> to include the Unity assemblies; otherwise, <see langword="false" />. Defaults to <see langword="false" />.</param>
-            <param name="includeDynamicAssemblies"><see langword="false" /> to include dynamic assemblies; otherwise, <see langword="false" />. Defaults to <see langword="false" />.</param>
-            <param name="skipOnError"><see langword="true"/> to skip errors; otherwise, <see langword="true"/>.</param>
-            <returns>
-            All visible, non-abstract classes in the loaded assemblies.
-            </returns>
-            <remarks>
-            If <paramref name="skipOnError" /> is <see langword="true" />, all exceptions thrown while getting types from the assemblies are ignored, and the types
-            that can be retrieved are returned; otherwise, the original exception is thrown.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.AllClasses.FromAssembliesInBasePath(System.Boolean,System.Boolean,System.Boolean)">
-            <summary>
-            Returns all visible, non-abstract classes from all assemblies that are located in the base folder of the current application domain.
-            </summary>
-            <param name="includeSystemAssemblies"><see langword="false" /> to include system assemblies; otherwise, <see langword="false" />. Defaults to <see langword="false" />.</param>
-            <param name="includeUnityAssemblies"><see langword="false" /> to include the Unity assemblies; otherwise, <see langword="false" />. Defaults to <see langword="false" />.</param>
-            <param name="skipOnError"><see langword="true"/> to skip errors; otherwise, <see langword="true"/>.</param>
-            <returns>
-            All visible, non-abstract classes.
-            </returns>
-            <remarks>
-            If <paramref name="skipOnError" /> is <see langword="true" />, all exceptions thrown while loading assemblies or getting types from the assemblies are ignored, and the types
-            that can be retrieved are returned; otherwise, the original exception is thrown.
-            </remarks>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.RegistrationConvention">
-            <summary>
-            Represents a set of types to register and their registration settings.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.RegistrationConvention.GetTypes">
-            <summary>
-            Gets types to register.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.RegistrationConvention.GetFromTypes">
-            <summary>
-            Gets a function to get the types that will be requested for each type to configure.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.RegistrationConvention.GetName">
-            <summary>
-            Gets a function to get the name to use for the registration of each type.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.RegistrationConvention.GetLifetimeManager">
-            <summary>
-            Gets a function to get the <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the registration of each type. Defaults to no lifetime management.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.RegistrationConvention.GetInjectionMembers">
-            <summary>
-            Gets a function to get the additional <see cref="T:Microsoft.Practices.Unity.InjectionMember"/> objects for the registration of each type. Defaults to no injection members.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.WithName">
-            <summary>
-            Provides helper methods to get type names.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithName.TypeName(System.Type)">
-            <summary>
-            Returns the type name.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>The type name.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithName.Default(System.Type)">
-            <summary>
-            Returns null for the registration name.
-            </summary>
-            <param name="type">The type.</param>
-            <returns><see langword="null"/></returns>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.WithMappings">
-            <summary>
-            Provides helper methods to map types to the types interfaces to which register them.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithMappings.None(System.Type)">
-            <summary>
-            Returns no types.
-            </summary>
-            <param name="implementationType">The type to register.</param>
-            <returns>An empty enumeration.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithMappings.FromMatchingInterface(System.Type)">
-            <summary>
-            Returns an enumeration with the interface that matches the name of <paramref name="implementationType"/>.
-            </summary>
-            <param name="implementationType">The type to register.</param>
-            <returns>An enumeration with the first interface matching the name of <paramref name="implementationType"/> (for example, if type is MyType, a matching interface is IMyType),
-            or an empty enumeration if no such interface is found.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithMappings.FromAllInterfaces(System.Type)">
-            <summary>
-            Returns an enumeration with all the interfaces implemented by <paramref name="implementationType"/>.
-            </summary>
-            <param name="implementationType">The type to register.</param>
-            <returns>An enumeration with all the interfaces implemented by the implementation type except <see cref="T:System.IDisposable"/>.</returns>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.WithMappings.FromAllInterfacesInSameAssembly(System.Type)">
-            <summary>
-            Returns an enumeration with all the interfaces implemented by <paramref name="implementationType"/> that belong to the same assembly as implementationType.
-            </summary>
-            <param name="implementationType">The type to register.</param>
-            <returns>An enumeration with all the interfaces implemented by the implementation type that belong to the same assembly.</returns>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.UnityContainerRegistrationByConventionExtensions">
-            <summary>
-            Provides a set of convenience overloads to the
-            <see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> interface to support registration of multiple types.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerRegistrationByConventionExtensions.RegisterTypes(Microsoft.Practices.Unity.IUnityContainer,System.Collections.Generic.IEnumerable{System.Type},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Type}},System.Func{System.Type,System.String},System.Func{System.Type,Microsoft.Practices.Unity.LifetimeManager},System.Func{System.Type,System.Collections.Generic.IEnumerable{Microsoft.Practices.Unity.InjectionMember}},System.Boolean)">
-            <summary>
-            Registers the supplied types by using the specified rules for name, lifetime manager, injection members, and registration types.
-            </summary>
-            <param name="container">The container to configure.</param>
-            <param name="types">The types to register. The methods in the <see cref="T:Microsoft.Practices.Unity.AllClasses"/> class can be used to scan assemblies to get types, and further filtering can be performed using LINQ queries.</param>
-            <param name="getFromTypes">A function that gets the types that will be requested for each type to configure. It can be a method from the <see cref="T:Microsoft.Practices.Unity.WithMappings"/> class or a custom function. Defaults to no registration types, and registers only the supplied types.</param>
-            <param name="getName">A function that gets the name to use for the registration of each type. It can be a method from the <see cref="T:Microsoft.Practices.Unity.WithName"/> or a custom function. Defaults to no name.</param>
-            <param name="getLifetimeManager">A function that gets the <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the registration of each type. It can be a method from the <see cref="T:Microsoft.Practices.Unity.WithLifetime"/> class or a custom function. Defaults to no lifetime management.</param>
-            <param name="getInjectionMembers">A function that gets the additional <see cref="T:Microsoft.Practices.Unity.InjectionMember"/> objects for the registration of each type. Defaults to no injection members.</param>
-            <param name="overwriteExistingMappings"><see langword="true"/> to overwrite existing mappings; otherwise, <see langword="false"/>. Defaults to <see langword="false"/>.</param>
-            <returns>
-            The container that this method was called on.
-            </returns>
-            <exception cref="T:System.ArgumentException">A new registration would overwrite an existing mapping and <paramref name="overwriteExistingMappings"/> is <see langword="false"/>.</exception>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerRegistrationByConventionExtensions.RegisterTypes(Microsoft.Practices.Unity.IUnityContainer,Microsoft.Practices.Unity.RegistrationConvention,System.Boolean)">
-            <summary>
-            Registers the types according to the <paramref name="convention"/>.
-            </summary>
-            <param name="container">The container to configure.</param>
-            <param name="convention">The convention to determine which types will be registered and how.</param>
-            <param name="overwriteExistingMappings"><see langword="true"/> to overwrite existing mappings; otherwise, <see langword="false"/>. Defaults to <see langword="false"/>.</param>
-            <returns>
-            The container that this method was called on.
-            </returns>
+            <returns>The names registered for <paramref name="type"/>.</returns>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.LazyDynamicMethodBuildPlanCreatorPolicy">
             <summary>
@@ -308,13 +33,6 @@
             <summary>
             A <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderPolicy"/> that can create and return an <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuildPlanPolicy"/>
             for the given build key.
-            </summary>
-        </member>
-        <member name="T:Microsoft.Practices.ObjectBuilder2.IBuilderPolicy">
-            <summary>
-            Represents a builder policy interface. Since there are no fixed requirements
-            for policies, it acts as a marker interface from which to derive all other
-            policy interfaces.
             </summary>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.IBuildPlanCreatorPolicy.CreatePlan(Microsoft.Practices.ObjectBuilder2.IBuilderContext,Microsoft.Practices.ObjectBuilder2.NamedTypeBuildKey)">
@@ -527,7 +245,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.CompositeResolverOverride.AddRange(System.Collections.Generic.IEnumerable{Microsoft.Practices.Unity.ResolverOverride})">
             <summary>
-            Add a setof <see cref="T:Microsoft.Practices.Unity.ResolverOverride"/>s to the collection.
+            Add a set of <see cref="T:Microsoft.Practices.Unity.ResolverOverride"/>s to the collection.
             </summary>
             <param name="newOverrides">items to add.</param>
         </member>
@@ -1170,7 +888,6 @@
             <summary>
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
-            <filterpriority>2</filterpriority>
         </member>
         <member name="M:Microsoft.Practices.Unity.ContainerControlledLifetimeManager.Dispose(System.Boolean)">
             <summary>
@@ -1321,7 +1038,7 @@
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy">
             <summary>
-            A <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderPolicy"/> that is used at build plan execution time
+            A strategy that is used at build plan execution time
             to resolve a dependent value.
             </summary>
         </member>
@@ -1430,7 +1147,7 @@
             <typeparam name="TPolicyInterface">The interface the policy is registered under.</typeparam>
             <param name="policies"><see cref="T:Microsoft.Practices.ObjectBuilder2.IPolicyList"/> to search.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.PolicyListExtensions.Get``1(Microsoft.Practices.ObjectBuilder2.IPolicyList,System.Object,System.Boolean,Microsoft.Practices.ObjectBuilder2.IPolicyList@)">
@@ -1440,7 +1157,7 @@
             <typeparam name="TPolicyInterface">The interface the policy is registered under.</typeparam>
             <param name="policies"><see cref="T:Microsoft.Practices.ObjectBuilder2.IPolicyList"/> to search.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <param name="containingPolicyList">The policy list that actually contains the returned policy.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
         </member>
@@ -1451,7 +1168,7 @@
             <param name="policies"><see cref="T:Microsoft.Practices.ObjectBuilder2.IPolicyList"/> to search.</param>
             <param name="policyInterface">The interface the policy is registered under.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.PolicyListExtensions.GetNoDefault``1(Microsoft.Practices.ObjectBuilder2.IPolicyList,System.Object,System.Boolean)">
@@ -1461,7 +1178,7 @@
             <typeparam name="TPolicyInterface">The interface the policy is registered under.</typeparam>
             <param name="policies"><see cref="T:Microsoft.Practices.ObjectBuilder2.IPolicyList"/> to search.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.PolicyListExtensions.GetNoDefault``1(Microsoft.Practices.ObjectBuilder2.IPolicyList,System.Object,System.Boolean,Microsoft.Practices.ObjectBuilder2.IPolicyList@)">
@@ -1471,7 +1188,7 @@
             <typeparam name="TPolicyInterface">The interface the policy is registered under.</typeparam>
             <param name="policies"><see cref="T:Microsoft.Practices.ObjectBuilder2.IPolicyList"/> to search.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <param name="containingPolicyList">The policy list that actually contains the returned policy.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
         </member>
@@ -1482,7 +1199,7 @@
             <param name="policies"><see cref="T:Microsoft.Practices.ObjectBuilder2.IPolicyList"/> to search.</param>
             <param name="policyInterface">The interface the policy is registered under.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.PolicyListExtensions.Set``1(Microsoft.Practices.ObjectBuilder2.IPolicyList,``0,System.Object)">
@@ -1516,13 +1233,12 @@
         </member>
         <member name="P:Microsoft.Practices.ObjectBuilder2.BuildOperation.TypeBeingConstructed">
             <summary>
-             The type that's currently being built.
+            The type that's currently being built.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.DeferredResolveBuildPlanPolicy">
             <summary>
-            Build plan for <see cref="T:System.Func`1"/> that will
-            return a func that will resolve the requested type
+            Build plan for <see cref="T:System.Func`1"/> that will return a Func that will resolve the requested type
             through this container later.
             </summary>
         </member>
@@ -1551,7 +1267,7 @@
             <summary>
             The almost inevitable collection of extra helper methods on
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> to augment the rich set of what
-            Linq already gives us.
+            LINQ already gives us.
             </summary>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
@@ -1564,7 +1280,7 @@
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.EnumerableExtensions.JoinStrings``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Func{``0,System.String})">
             <summary>
-            Create a single string from a sequenc of items, separated by the provided <paramref name="separator"/>,
+            Create a single string from a sequence of items, separated by the provided <paramref name="separator"/>,
             and with the conversion to string done by the given <paramref name="converter"/>.
             </summary>
             <remarks>This method does basically the same thing as <see cref="M:System.String.Join(System.String,System.String[])"/>,
@@ -1577,7 +1293,7 @@
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.EnumerableExtensions.JoinStrings``1(System.Collections.Generic.IEnumerable{``0},System.String)">
             <summary>
-            Create a single string from a sequenc of items, separated by the provided <paramref name="separator"/>,
+            Create a single string from a sequence of items, separated by the provided <paramref name="separator"/>,
             and with the conversion to string done by the item's <see cref="M:System.Object.ToString"/> method.
             </summary>
             <remarks>This method does basically the same thing as <see cref="M:System.String.Join(System.String,System.String[])"/>,
@@ -1635,7 +1351,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.PropertyOverride.#ctor(System.String,System.Object)">
             <summary>
-             Create an instance of <see cref="T:Microsoft.Practices.Unity.PropertyOverride"/>.
+            Create an instance of <see cref="T:Microsoft.Practices.Unity.PropertyOverride"/>.
             </summary>
             <param name="propertyName">The property name.</param>
             <param name="propertyValue">Value to use for the property.</param>
@@ -1854,6 +1570,20 @@
             <param name="buildKey">Build key for this context.</param>
             <param name="existing">Existing object to build up.</param>
         </member>
+        <member name="M:Microsoft.Practices.ObjectBuilder2.BuilderContext.#ctor(Microsoft.Practices.ObjectBuilder2.IStrategyChain,Microsoft.Practices.ObjectBuilder2.ILifetimeContainer,Microsoft.Practices.ObjectBuilder2.IPolicyList,Microsoft.Practices.ObjectBuilder2.IPolicyList,Microsoft.Practices.ObjectBuilder2.NamedTypeBuildKey,Microsoft.Practices.Unity.CompositeResolverOverride)">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.ObjectBuilder2.BuilderContext"/> using the explicitly provided
+            values.
+            </summary>
+            <param name="chain">The <see cref="T:Microsoft.Practices.ObjectBuilder2.IStrategyChain"/> to use for this context.</param>
+            <param name="lifetime">The <see cref="T:Microsoft.Practices.ObjectBuilder2.ILifetimeContainer"/> to use for this context.</param>
+            <param name="persistentPolicies">The set of persistent policies to use for this context.</param>
+            <param name="transientPolicies">The set of transient policies to use for this context. It is
+            the caller's responsibility to ensure that the transient and persistent policies are properly
+            combined.</param>
+            <param name="buildKey">Build key for this context.</param>
+            <param name="resolverOverrides">The resolver overrides.</param>
+        </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.BuilderContext.AddResolverOverrides(System.Collections.Generic.IEnumerable{Microsoft.Practices.Unity.ResolverOverride})">
             <summary>
             Add a new set of resolver override objects to the current build operation.
@@ -1973,9 +1703,6 @@
             <summary>
             Represents that a dependency could not be resolved.
             </summary>
-            <summary>
-            Represents that a dependency could not be resolved.
-            </summary>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.DependencyMissingException.#ctor">
             <summary>
@@ -2002,18 +1729,7 @@
             </summary>
             <param name="buildKey">The build key of the object begin built.</param>
         </member>
-        <member name="M:Microsoft.Practices.ObjectBuilder2.DependencyMissingException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Practices.ObjectBuilder2.DependencyMissingException"/> class with serialized data.
-            </summary>
-            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
-            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. </param>
-        </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.IllegalInjectionMethodException">
-            <summary>
-            The exception thrown when injection is attempted on a method
-            that is an open generic or has out or ref params.
-            </summary>
             <summary>
             The exception thrown when injection is attempted on a method
             that is an open generic or has out or ref params.
@@ -2038,13 +1754,6 @@
             </summary>
             <param name="message">Message to return.</param>
             <param name="innerException">Inner exception</param>
-        </member>
-        <member name="M:Microsoft.Practices.ObjectBuilder2.IllegalInjectionMethodException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Used for serialization.
-            </summary>
-            <param name="info">Serialization info.</param>
-            <param name="context">Serialization context.</param>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.BuilderContextExtensions">
             <summary>
@@ -2182,7 +1891,7 @@
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.LifetimeContainer.Dispose(System.Boolean)">
             <summary>
-            Releases the managed resources used by the DbDataReader and optionally releases the unmanaged resources. 
+            Releases the resources used by the <see cref="T:Microsoft.Practices.ObjectBuilder2.LifetimeContainer"/>. 
             </summary>
             <param name="disposing">
             true to release managed and unmanaged resources; false to release only unmanaged resources.
@@ -2248,7 +1957,7 @@
             </summary>
             <param name="policyInterface">The interface the policy is registered under.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <param name="containingPolicyList">The policy list in the chain that the searched for policy was found in, null if the policy was
             not found.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
@@ -2320,7 +2029,7 @@
             </summary>
             <param name="policyInterface">The interface the policy is registered under.</param>
             <param name="buildKey">The key the policy applies.</param>
-            <param name="localOnly">true if the policy searches local only; otherwise false to seach up the parent chain.</param>
+            <param name="localOnly">true if the policy searches local only; otherwise false to search up the parent chain.</param>
             <param name="containingPolicyList">The policy list in the chain that the searched for policy was found in, null if the policy was
             not found.</param>
             <returns>The policy in the list, if present; returns null otherwise.</returns>
@@ -2598,13 +2307,11 @@
             <summary>
             Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
             </summary>
-            
-            <returns>
-            Value Condition Less than zerox is less than y.Zerox equals y.Greater than zerox is greater than y.
-            </returns>
-            
             <param name="y">The second object to compare.</param>
             <param name="x">The first object to compare.</param>
+            <returns>
+            Value Condition Less than zero is less than y. Zero equals y. Greater than zero is greater than y.
+            </returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.ConstructorSelectorPolicy`1.CreateResolver(System.Reflection.ParameterInfo)">
             <summary>
@@ -2625,27 +2332,28 @@
         <member name="T:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters`1">
             <summary>
             Base class for return values from selector policies that
-            return a memberinfo of some sort plus a list of parameter
+            return a MemberInfo of some sort plus a list of parameter
             keys to look up the parameter resolvers.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters">
             <summary>
             Base class for return of selector policies that need
-            to keep track of a set of parameter keys.
+            to keep track of a set of parameter resolvers.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters.AddParameterKey(System.String)">
+        <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters.AddParameterResolver(Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy)">
             <summary>
-            Add a new parameter key to this object. Keys are assumed
-            to be in the order of the parameters to the constructor.
+            Adds the parameter resolver. Resolvers are assumed
+            to be in the order of the parameters to the member.
             </summary>
-            <param name="newKey">Key for the next parameter to look up.</param>
+            <param name="newResolver">The new resolver.</param>
         </member>
-        <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters.GetParameterKeys">
+        <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters.GetParameterResolvers">
             <summary>
-            The set of keys for the constructor parameters.
+            Gets the parameter resolvers.
             </summary>
+            <returns>An array with the parameter resolvers.</returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters`1.#ctor(`0)">
             <summary>
@@ -2749,6 +2457,24 @@
             <param name="context">The <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderContext"/> currently being
             used for the build of this object.</param>
         </member>
+        <member name="M:Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForAttemptingToConstructAbstractClass(Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
+            <summary>
+            A helper method used by the generated IL to throw an exception if
+            no existing object is present, but the user is attempting to build
+            an abstract class (usually due to the lack of a type mapping).
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderContext"/> currently being
+            used for the build of this object.</param>
+        </member>
+        <member name="M:Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForAttemptingToConstructDelegate(Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
+            <summary>
+            A helper method used by the generated IL to throw an exception if
+            no existing object is present, but the user is attempting to build
+            an delegate other than Func{T} or Func{IEnumerable{T}}.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderContext"/> currently being
+            used for the build of this object.</param>
+        </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForNullExistingObject(Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
             <summary>
             A helper method used by the generated IL to throw an exception if
@@ -2806,11 +2532,11 @@
             </summary>
             <param name="expression"></param>
         </member>
-        <member name="M:Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.CreateParameterExpression(System.String,System.Type,System.Linq.Expressions.Expression)">
+        <member name="M:Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.CreateParameterExpression(Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy,System.Type,System.Linq.Expressions.Expression)">
             <summary>
             
             </summary>
-            <param name="parameterKey"></param>
+            <param name="resolver"></param>
             <param name="parameterType"></param>
             <param name="setOperationExpression"></param>
             <returns></returns>
@@ -2824,6 +2550,15 @@
             <param name="resolverKey">Key the resolver was stored under.</param>
             <returns>The found dependency resolver.</returns>
         </member>
+        <member name="M:Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.GetResolver(Microsoft.Practices.ObjectBuilder2.IBuilderContext,System.Type,Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy)">
+            <summary>
+            Helper method used by generated IL to look up a dependency resolver based on the given key.
+            </summary>
+            <param name="context">Current build context.</param>
+            <param name="dependencyType">Type of the dependency being resolved.</param>
+            <param name="resolver">The configured resolver.</param>
+            <returns>The found dependency resolver.</returns>
+        </member>
         <member name="P:Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.TypeToBuild">
             <summary>
             The type that is to be built with the dynamic build plan.
@@ -2831,7 +2566,7 @@
         </member>
         <member name="P:Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.ContextParameter">
             <summary>
-            The context parameter represeting the <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderContext"/> used when the build plan is executed.
+            The context parameter representing the <see cref="T:Microsoft.Practices.ObjectBuilder2.IBuilderContext"/> used when the build plan is executed.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanMethod">
@@ -3200,22 +2935,22 @@
             for this property's value.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedProperty.#ctor(System.Reflection.PropertyInfo,System.String)">
+        <member name="M:Microsoft.Practices.ObjectBuilder2.SelectedProperty.#ctor(System.Reflection.PropertyInfo,Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy)">
             <summary>
             Create an instance of <see cref="T:Microsoft.Practices.ObjectBuilder2.SelectedProperty"/>
             with the given <see cref="T:System.Reflection.PropertyInfo"/> and key.
             </summary>
             <param name="property">The property.</param>
-            <param name="key">Key to use to look up the resolver.</param>
+            <param name="resolver"></param>
         </member>
         <member name="P:Microsoft.Practices.ObjectBuilder2.SelectedProperty.Property">
             <summary>
             PropertyInfo for this property.
             </summary>
         </member>
-        <member name="P:Microsoft.Practices.ObjectBuilder2.SelectedProperty.Key">
+        <member name="P:Microsoft.Practices.ObjectBuilder2.SelectedProperty.Resolver">
             <summary>
-            Key to look up this property's resolver.
+            IDependencyResolverPolicy for this property
             </summary>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.DependencyResolverTrackerPolicy">
@@ -3300,8 +3035,7 @@
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.IStagedStrategyChain">
             <summary>
-            This interface defines a standard method to convert any 
-            <see cref="T:Microsoft.Practices.ObjectBuilder2.StagedStrategyChain`1"/> regardless
+            This interface defines a standard method to convert any <see cref="T:Microsoft.Practices.ObjectBuilder2.StagedStrategyChain`1"/> regardless
             of the stage enum into a regular, flat strategy chain.
             </summary>
         </member>
@@ -3416,7 +3150,7 @@
             Clear the current strategy chain list.
             </summary>
             <remarks>
-            This will not clear the inner strategy chain if this instane was created with one.
+            This will not clear the inner strategy chain if this instance was created with one.
             </remarks>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.StagedStrategyChain`1.MakeStrategyChain">
@@ -3432,12 +3166,12 @@
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.StrategyChain.#ctor">
             <summary>
-            Initialzie a new instance of the <see cref="T:Microsoft.Practices.ObjectBuilder2.StrategyChain"/> class.
+            Initialize a new instance of the <see cref="T:Microsoft.Practices.ObjectBuilder2.StrategyChain"/> class.
             </summary>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.StrategyChain.#ctor(System.Collections.IEnumerable)">
             <summary>
-            Initialzie a new instance of the <see cref="T:Microsoft.Practices.ObjectBuilder2.StrategyChain"/> class with a colleciton of strategies.
+            Initialize a new instance of the <see cref="T:Microsoft.Practices.ObjectBuilder2.StrategyChain"/> class with a collection of strategies.
             </summary>
             <param name="strategies">A collection of strategies to initialize the chain.</param>
         </member>
@@ -3474,24 +3208,22 @@
             <param name="context">Context for the teardown process.</param>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.StrategyChain.System#Collections#Generic#IEnumerable{Microsoft#Practices#ObjectBuilder2#IBuilderStrategy}#GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates through the collection.
-            </summary>
+             <summary>
+             Returns an enumerator that iterates through the collection.
+             </summary>
             
-            <returns>
-            A <see cref="T:System.Collections.Generic.IEnumerator`1"></see> that can be used to iterate through the collection.
-            </returns>
-            <filterpriority>1</filterpriority>
+             <returns>
+             A <see cref="T:System.Collections.Generic.IEnumerator`1"></see> that can be used to iterate through the collection.
+             </returns>
         </member>
         <member name="M:Microsoft.Practices.ObjectBuilder2.StrategyChain.GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates through a collection.
-            </summary>
+             <summary>
+             Returns an enumerator that iterates through a collection.
+             </summary>
             
-            <returns>
-            An <see cref="T:System.Collections.IEnumerator"></see> object that can be used to iterate through the collection.
-            </returns>
-            <filterpriority>2</filterpriority>
+             <returns>
+             An <see cref="T:System.Collections.IEnumerator"></see> object that can be used to iterate through the collection.
+             </returns>
         </member>
         <member name="T:Microsoft.Practices.ObjectBuilder2.NamedTypeBuildKey">
             <summary>
@@ -3631,32 +3363,6 @@
             <param name="sequence1">First sequence of items.</param>
             <param name="sequence2">Second sequence of items.</param>
             <returns>New sequence of pairs. This sequence ends when the shorter of sequence1 and sequence2 does.</returns>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.ResolutionFailedException">
-            <summary>
-            The exception thrown by the Unity container when
-            an attempt to resolve a dependency fails.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.ResolutionFailedException.#ctor(System.Type,System.String,System.Exception,Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
-            <summary>
-            Create a new <see cref="T:Microsoft.Practices.Unity.ResolutionFailedException"/> that records
-            the exception for the given type and name.
-            </summary>
-            <param name="typeRequested">Type requested from the container.</param>
-            <param name="nameRequested">Name requested from the container.</param>
-            <param name="innerException">The actual exception that caused the failure of the build.</param>
-            <param name="context">The build context representing the failed operation.</param>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.ResolutionFailedException.TypeRequested">
-            <summary>
-            The type that was being requested from the container at the time of failure.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.ResolutionFailedException.NameRequested">
-            <summary>
-            The name that was being requested from the container at the time of failure.
-            </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.StaticFactory.StaticFactoryExtension">
             <summary>
@@ -4196,7 +3902,7 @@
             but you still want properties and other injection performed.
             </para></remarks>
             <typeparam name="T"><see cref="T:System.Type"/> of object to perform injection on.</typeparam>
-            <param name="container">Conatiner to resolve through.</param>
+            <param name="container">Container to resolve through.</param>
             <param name="existing">Instance to build up.</param>
             <param name="name">name to use when looking up the typemappings and other configurations.</param>
             <param name="resolverOverrides">Any overrides for the Buildup.</param>
@@ -4249,8 +3955,8 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.UnityContainerExtensions.IsRegistered(Microsoft.Practices.Unity.IUnityContainer,System.Type)">
             <summary>
-             Check if a particular type has been registered with the container with
-             the default name.
+            Check if a particular type has been registered with the container with
+            the default name.
             </summary>
             <param name="container">Container to inspect.</param>
             <param name="typeToCheck">Type to check registration for.</param>
@@ -4299,7 +4005,7 @@
             method is called, that name is included in the list that is returned.
             </para></remarks>
             <param name="t"><see cref="T:System.Type"/> to register.</param>
-            <param name="name">Name assocated with that type.</param>
+            <param name="name">Name associated with that type.</param>
         </member>
         <member name="P:Microsoft.Practices.Unity.ExtensionContext.Container">
             <summary>
@@ -4370,7 +4076,7 @@
             <summary>
             The name.
             </summary>
-            <value>Name used for this event arg object.</value>
+            <value>Name used for this EventArg object.</value>
         </member>
         <member name="T:Microsoft.Practices.Unity.RegisterEventArgs">
             <summary>
@@ -4705,7 +4411,7 @@
             Add policies to the <paramref name="policies"/> to configure the
             container to call this constructor with the appropriate parameter values.
             </summary>
-            <param name="serviceType">Interface being registered, ignored in this implemenation.</param>
+            <param name="serviceType">Interface being registered, ignored in this implementation.</param>
             <param name="implementationType">Type to register.</param>
             <param name="name">Name used to resolve the type object.</param>
             <param name="policies">Policy list to add policies to.</param>
@@ -4834,7 +4540,7 @@
             </para></remarks>
             <param name="t"><see cref="T:System.Type"/> of object to perform injection on.</param>
             <param name="existing">Instance to build up.</param>
-            <param name="name">name to use when looking up the typemappings and other configurations.</param>
+            <param name="name">name to use when looking up the TypeMappings and other configurations.</param>
             <param name="resolverOverrides">Any overrides for the resolve calls.</param>
             <returns>The resulting object. By default, this will be <paramref name="existing"/>, but
             container extensions may add things like automatic proxy creation which would
@@ -4872,7 +4578,7 @@
             <para>
             This method removes all extensions from the container, including the default ones
             that implement the out-of-the-box behavior. After this method, if you want to use
-            the container again you will need to either readd the default extensions or replace
+            the container again you will need to either read the default extensions or replace
             them with your own.
             </para>
             <para>
@@ -5144,7 +4850,7 @@
             Resolve the value for a dependency.
             </summary>
             <param name="context">Current build context.</param>
-            <returns>An array pupulated with the results of resolving the resolver policies.</returns>
+            <returns>An array populated with the results of resolving the resolver policies.</returns>
         </member>
         <member name="T:Microsoft.Practices.Unity.ObjectBuilder.SpecifiedConstructorSelectorPolicy">
             <summary>
@@ -5214,7 +4920,7 @@
         </member>
         <member name="T:Microsoft.Practices.Unity.ObjectBuilder.SpecifiedPropertiesSelectorPolicy">
             <summary>
-            An implemnetation of <see cref="T:Microsoft.Practices.ObjectBuilder2.IPropertySelectorPolicy"/> which returns
+            An implementation of <see cref="T:Microsoft.Practices.ObjectBuilder2.IPropertySelectorPolicy"/> which returns
             the set of specific properties that the selector was configured with.
             </summary>
         </member>
@@ -5237,6 +4943,32 @@
             generated resolver objects into.</param>
             <returns>Sequence of <see cref="T:System.Reflection.PropertyInfo"/> objects
             that contain the properties to set.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.Unity.ResolutionFailedException">
+            <summary>
+            The exception thrown by the Unity container when
+            an attempt to resolve a dependency fails.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolutionFailedException.#ctor(System.Type,System.String,System.Exception,Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.Unity.ResolutionFailedException"/> that records
+            the exception for the given type and name.
+            </summary>
+            <param name="typeRequested">Type requested from the container.</param>
+            <param name="nameRequested">Name requested from the container.</param>
+            <param name="innerException">The actual exception that caused the failure of the build.</param>
+            <param name="context">The build context representing the failed operation.</param>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.ResolutionFailedException.TypeRequested">
+            <summary>
+            The type that was being requested from the container at the time of failure.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.ResolutionFailedException.NameRequested">
+            <summary>
+            The name that was being requested from the container at the time of failure.
+            </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.ResolvedParameter">
             <summary>
@@ -5368,6 +5100,11 @@
             <param name="assignmentInstance">The instance that will be assigned.</param>
             <param name="argumentName">Argument name.</param>
         </member>
+        <member name="T:Microsoft.Practices.Unity.NamedTypesRegistry">
+            <summary>
+            A helper class to manage the names that get registered in the container  
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.Unity.ObjectBuilder.UnityBuildStage">
             <summary>
             The build stages we use in the Unity container
@@ -5442,6 +5179,16 @@
               Looks up a localized string similar to The current build operation (build key {2}) failed: {3} (Strategy type {0}, index {1}).
             </summary>
         </member>
+        <member name="P:Microsoft.Practices.Unity.Properties.Resources.CannotConstructAbstractClass">
+            <summary>
+              Looks up a localized string similar to The current type, {0}, is an abstract class and cannot be constructed. Are you missing a type mapping?.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.Properties.Resources.CannotConstructDelegate">
+            <summary>
+              Looks up a localized string similar to The current type, {0}, is delegate and cannot be constructed. Unity only supports resolving Func&lt;T&gt; and Func&lt;IEnumerable&lt;T&gt;&gt; by default..
+            </summary>
+        </member>
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.CannotConstructInterface">
             <summary>
               Looks up a localized string similar to The current type, {0}, is an interface and cannot be constructed. Are you missing a type mapping?.
@@ -5500,16 +5247,6 @@
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.ConstructorParameterResolutionFailed">
             <summary>
               Looks up a localized string similar to The parameter {0} could not be resolved when attempting to call constructor {1}..
-            </summary>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.Properties.Resources.DuplicateTypeMappingException">
-            <summary>
-              Looks up a localized string similar to An attempt to override an existing mapping was detected for type {1} with name &quot;{0}&quot;, currently mapped to type {2}, to type {3}..
-            </summary>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.Properties.Resources.ExceptionNullAssembly">
-            <summary>
-              Looks up a localized string similar to The set of assemblies contains a null element..
             </summary>
         </member>
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.ExceptionNullParameterValue">
@@ -5735,7 +5472,7 @@
             <para>If true, the container will take over the lifetime of the instance,
             calling Dispose on it (if it's <see cref="T:System.IDisposable"/>) when the container is Disposed.</para>
             <para>
-             If false, container will not maintain a strong reference to <paramref name="instance"/>. User is reponsible
+             If false, container will not maintain a strong reference to <paramref name="instance"/>. User is responsible
             for disposing instance, and for keeping the instance from being garbage collected.</para></param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
@@ -5815,7 +5552,7 @@
             <para>
             This method removes all extensions from the container, including the default ones
             that implement the out-of-the-box behavior. After this method, if you want to use
-            the container again you will need to either readd the default extensions or replace
+            the container again you will need to either read the default extensions or replace
             them with your own.
             </para>
             <para>
@@ -6021,7 +5758,7 @@
         <member name="T:Microsoft.Practices.Unity.Utility.ParameterReflectionHelper">
             <summary>
             Another reflection helper class that has extra methods
-            for dealing with ParameterInfos.
+            for dealing with ParameterInfo.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.Utility.ReflectionHelper">
