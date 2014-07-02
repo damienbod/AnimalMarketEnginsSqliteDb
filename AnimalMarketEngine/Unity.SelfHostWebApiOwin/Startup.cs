@@ -21,7 +21,7 @@ namespace Unity.SelfHostWebApiOwin
         {
             string baseAddress = "http://localhost:8086/";
             var startup = _container.Resolve<Startup>();
-            webApplication = WebApp.Start(baseAddress, startup.Configuration);           
+            webApplication = WebApp.Start(baseAddress, startup.Configuration);
         }
 
         public static void StopServer()
@@ -36,10 +36,10 @@ namespace Unity.SelfHostWebApiOwin
             // Configure Web API for self-host. 
             var config = new HttpConfiguration();
 
-			// Add Unity DependencyResolver
+            // Add Unity DependencyResolver
             config.DependencyResolver = new UnityDependencyResolver(UnityHelpers.GetConfiguredContainer());
 
-			// Add Unity filters provider
+            // Add Unity filters provider
             RegisterFilterProviders(config);
 
             config.Routes.MapHttpRoute(

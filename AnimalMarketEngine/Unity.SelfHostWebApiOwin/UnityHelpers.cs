@@ -26,7 +26,7 @@ namespace Unity.SelfHostWebApiOwin
 
         //private static readonly Type[] EmptyTypes = new Type[0];
 
-        public static IEnumerable<Type> GetTypesWithCustomAttribute<T>( Assembly[] assemblies)
+        public static IEnumerable<Type> GetTypesWithCustomAttribute<T>(Assembly[] assemblies)
         {
             foreach (var assembly in assemblies)
             {
@@ -42,7 +42,7 @@ namespace Unity.SelfHostWebApiOwin
 
         public static void RegisterTypes(IUnityContainer container)
         {
-		    // Add your register logic here...
+            // Add your register logic here...
             var myAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("AnimalMarket")).ToArray();
 
             container.RegisterType(typeof(Startup));
